@@ -177,20 +177,116 @@ h1, h2, h3, h4 { font-family: var(--f-head); text-transform: uppercase; line-hei
 .bar-val { height: 100%; background: var(--gold); }
 
 /* --- OPERATIONS (Projects) --- */
-.ops-list { display: flex; flex-direction: column; gap: 15px; }
-.op-row {
-    display: flex; align-items: center; background: rgba(255,255,255,0.03); padding: 20px;
-    text-decoration: none; border-left: 3px solid transparent; transition: 0.2s;
+
+.carousel-wrapper {
+    display: flex; 
+    gap: 20px; 
+    align-items: flex-start;
+    max-width: 900px; 
+    margin: 0 auto; 
+    height: 350px; 
 }
-.op-row:hover { background: rgba(255,255,255,0.06); border-left-color: var(--gold); }
+
+.carousel-line { 
+    width: 2px; 
+    height: 100%; 
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent); 
+    opacity: 0.5; 
+}
+
+.carousel-view {
+    flex: 1; 
+    height: 100%; 
+    overflow: hidden; 
+    position: relative;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+/* The Track: Moves up and down */
+.carousel-track { 
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+.op-row {
+    display: flex; 
+    align-items: center; 
+    background: rgba(255,255,255,0.03); 
+    padding: 25px;
+    text-decoration: none; 
+    border-left: 3px solid transparent; 
+    transition: 0.2s;
+    margin-bottom: 15px; 
+    height: 100px; 
+}
+
+.op-row:hover { 
+    background: rgba(255,255,255,0.06); 
+    border-left-color: var(--gold); 
+}
+
 .op-status { width: 8px; height: 8px; border-radius: 50%; margin-right: 20px; box-shadow: 0 0 8px currentColor; }
 .online { background: var(--green-safe); color: var(--green-safe); }
 .offline { background: var(--red-alert); color: var(--red-alert); }
+
 .op-info { flex: 1; }
 .op-type { font-size: 0.75rem; color: var(--text-muted); font-family: var(--f-head); letter-spacing: 1px; }
 .op-row h4 { font-size: 1.5rem; color: #fff; font-weight: 500; margin-top: 2px; }
 .op-action { font-family: var(--f-head); color: var(--gold); font-size: 1.2rem; }
-.locked { opacity: 0.5; pointer-events: none; filter: grayscale(1); }
+.locked { opacity: 0.5; filter: grayscale(1); cursor: not-allowed; }
+
+.carousel-controls {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between;
+    height: 100%; 
+    width: 40px; 
+    padding: 20px 0;
+}
+
+.control-btn {
+    background: transparent; 
+    border: 1px solid #333; 
+    color: var(--gold);
+    width: 30px; 
+    height: 30px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    transition: 0.3s;
+    font-size: 0.8rem;
+}
+
+.control-btn:hover { 
+    border-color: var(--gold); 
+    background: rgba(230, 184, 0, 0.1); 
+}
+
+/* Visual Scroll Bar Indicator */
+.scroll-track-ui { 
+    width: 2px; 
+    height: 200px; 
+    background: #222; 
+    position: relative; 
+    margin: 10px 0; 
+}
+
+.scroll-thumb-ui {
+    width: 6px; 
+    height: 30px; 
+    background: var(--gold); 
+    position: absolute;
+    left: -2px; 
+    top: 0; 
+    transition: top 0.4s;
+}
+
+@media (max-width: 768px) {
+    .carousel-wrapper { height: 400px; }
+}
+
 
 /* --- FORM --- */
 #comms-form { max-width: 700px; margin: 0 auto; }
