@@ -2,6 +2,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* --- 1. PRELOADER & INITIALIZATION --- */
     const preloader = document.getElementById('preloader');
+        /* --- VERTICAL CAROUSEL LOGIC --- */
+    const track = document.getElementById('track');
+    const upBtn = document.getElementById('up-btn');
+    const downBtn = document.getElementById('down-btn');
+    const scrollThumb = document.getElementById('scroll-thumb');
+    
+    // Configuration
+    const itemHeight = 115; 
+    let currentIndex = 0;
+    
+    // We subtract 3 because 3 items are always visible on screen
+    const items = document.querySelectorAll('.op-row');
+    const maxIndex = Math.max(0, items.length - 3);
+
+    function updateCarousel() {
+        // 1. Move the Track Up/Down
+        const translateY = -(currentIndex * itemHeight);
+        track.style.transform = `translateY(${translateY}px)`;
+        
+        const progress = currentIndex / maxIndex;
+
+        const thumbTop = progress * 170; 
+        
+        // Handle case where there's no scrolling needed
+        if (maxIndex === 0) {
+            scrollThumb.style.top = '0px';
+        } else {
+            scrollThumb.style.top = `${thumbTop}px`;
+        }
+    }
+
+    // Button Listeners
+    if(downBtn && upBtn) {
+        downBtn.addEventListener('click', () => {
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        upBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+    }
+
     setTimeout(() => {
         preloader.style.opacity = '0';
         setTimeout(() => { preloader.style.display = 'none'; }, 500);
@@ -12,12 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const ripple = document.createElement('div');
         ripple.classList.add('ripple');
         // Center the ripple on click
-        ripple.style.left = (e.clientX - 10) + 'px'; // -10 for half width
+        ripple.style.left = (e.clientX - 10) + 'px'; 
         ripple.style.top = (e.clientY - 10) + 'px';
         
         document.getElementById('ripple-container').appendChild(ripple);
         
-        // Remove after animation
         setTimeout(() => {
             ripple.remove();
         }, 600);
@@ -28,12 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const layer1 = document.querySelector('.layer-1');
     const layer2 = document.querySelector('.layer-2');
 
-    if (window.innerWidth > 768) { // Only on desktop
+    if (window.innerWidth > 768) { 
+
         heroSection.addEventListener('mousemove', (e) => {
             const x = (e.clientX / window.innerWidth) * 100;
             const y = (e.clientY / window.innerHeight) * 100;
 
-            // Move layers slightly opposite to mouse
             layer1.style.transform = `translate(-${x * 0.05}%, -${y * 0.05}%)`;
             layer2.style.transform = `translate(${x * 0.1}%, ${y * 0.1}%)`;
         });
