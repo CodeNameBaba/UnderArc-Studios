@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>UnderArc Studios | Tactical Dev</title>
+    <link href="images/logo.jpg" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="scanlines"></div>
+    <div class="vignette"></div>
+    <div class="noise"></div>
+    <div id="ripple-container"></div>
+
+    <div id="preloader">
+        <div class="loader-box">
+            <div class="loader-glitch" data-text="INITIALIZING...">INITIALIZING...</div>
+            <div class="loader-bar"><div class="bar-fill"></div></div>
+            <div class="loader-sub">ESTABLISHING SECURE CONNECTION</div>
+        </div>
+    </div>
+
+    <nav class="desktop-nav">
+        <div class="container nav-inner">
+            <div class="brand">
+                <img src="images/logo.jpg" alt="Logo" class="nav-logo">
+                <div class="brand-text">
+                    <span class="main">UNDERARC</span>
+                    <span class="sub">STUDIOS</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">HQ</a></li>
+                <li><a href="#profile">COMMAND</a></li>
+                <li><a href="#services">INTEL</a></li>
+                <li><a href="#projects">OPERATIONS</a></li>
+                <li><a href="#contact" class="nav-btn">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero-section">
+        <div class="parallax-bg layer-1"></div>
+        <div class="parallax-bg layer-2"></div>
+        
+        <div class="container hero-content">
+            <div class="hud-box fade-in">
+                <span class="hud-label">CURRENT STATUS: ONLINE</span>
+                <span class="hud-label right">SYS.VER. 1.3.0</span>
+            </div>
+            
+            <h1 class="hero-title glitch-effect" data-text="DIGITAL DOMINANCE">DIGITAL DOMINANCE</h1>
+            <p class="hero-desc fade-in">
+                High-performance web architecture and immersive game development. 
+                We build digital weapons for the modern business battlefield.
+            </p>
+
+            <div class="hero-btns fade-in">
+                <a href="#contact" class="tac-btn primary">
+                    <span class="btn-text">INITIATE CONTRACT</span>
+                    <span class="btn-decor"></span>
+                </a>
+                <a href="#projects" class="tac-btn secondary">
+                    <span class="btn-text">VIEW DATABASE</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="profile" class="section-dark">
+        <div class="container">
+            <div class="section-head fade-in">
+                <div class="line"></div>
+                <h2>HIGH COMMAND</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="profile-card fade-in">
+                <div class="profile-scanner"></div>
+                <div class="profile-grid">
+                    <div class="profile-pic-frame">
+                        <div class="profile-placeholder">MK</div> 
+                        <div class="corner t-l"></div><div class="corner t-r"></div>
+                        <div class="corner b-l"></div><div class="corner b-r"></div>
+                    </div>
+                    <div class="profile-info">
+                        <div class="rank">CEO / LEAD ARCHITECT</div>
+                        <h3 class="name">MOHAMMAD SHAHWAR KHAN</h3>
+                        <p class="bio">
+                            Spearheading the intersection of code and creativity. 
+                            Specializing in indie game mechanics and full-stack web solutions.
+                        </p>
+                        <div class="stats-row">
+                            <div class="stat">
+                                <span class="val">100%</span>
+                                <span class="lbl">CODE QUALITY</span>
+                            </div>
+                            <div class="stat">
+                                <span class="val">13+</span>
+                                <span class="lbl">MODULES BUILT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="container section-pad">
+        <div class="section-head fade-in">
+            <div class="line"></div>
+            <h2>CAPABILITIES (INTEL)</h2>
+            <div class="line"></div>
+        </div>
+        
+        <div class="grid-3">
+            <div class="tac-card fade-in">
+                <div class="card-num">01</div>
+                <h3>WEB ARCHITECTURE</h3>
+                <p>Lightning fast websites for small businesses. SEO optimized. Mobile ready.</p>
+                <div class="bar-contain"><div class="bar-val" style="width: 95%"></div></div>
+            </div>
+            <div class="tac-card fade-in" style="transition-delay: 0.1s">
+                <div class="card-num">02</div>
+                <h3>GAME DEVELOPMENT</h3>
+                <p>Unreal Engine expertise. Creating worlds, not just games.</p>
+                <div class="bar-contain"><div class="bar-val" style="width: 88%"></div></div>
+            </div>
+            <div class="tac-card fade-in" style="transition-delay: 0.2s">
+                <div class="card-num">03</div>
+                <h3>UI/UX DESIGN</h3>
+                <p>Tactical interfaces that prioritize user experience and conversion.</p>
+                <div class="bar-contain"><div class="bar-val" style="width: 92%"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-dark section-pad">
+        <div class="container">
+            <div class="section-head fade-in">
+                <div class="line"></div>
+                <h2>PROJECT LOG</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="ops-list">
+                <a href="https://luckypropertydealers.hstn.me/?i=2" target="_blank" class="op-row fade-in">
+                    <div class="op-status online"></div>
+                    <div class="op-info">
+                        <div class="op-type">DEPLOYED // WEB</div>
+                        <h4>LUCKY PROPERTY DEALERS</h4>
+                    </div>
+                    <div class="op-action">ACCESS ></div>
+                </a>
+                
+                <a href="https://shahwarkhan.iceiy.com/?i=1" target="_blank" class="op-row fade-in" style="transition-delay: 0.1s">
+                    <div class="op-status online"></div>
+                    <div class="op-info">
+                        <div class="op-type">DEPLOYED // PERSONAL</div>
+                        <h4>SHAHWAR KHAN PORTFOLIO</h4>
+                    </div>
+                    <div class="op-action">ACCESS ></div>
+                </a>
+
+                <div class="op-row locked fade-in" style="transition-delay: 0.2s">
+                    <div class="op-status offline"></div>
+                    <div class="op-info">
+                        <div class="op-type">CLASSIFIED // GAME</div>
+                        <h4>PROJECT: SOULBLADE</h4>
+                    </div>
+                    <div class="op-action"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmYzMzMzIiBzdHJva2Utd2lkdGg9IjIiPjxyZWN0IHg9IjMiIHk9IjExIiB3aWR0aD0iMTgiIGhlaWdodD0iMTEiIHJ4PSIyIiByeT0iMiIvPjxwYXRoIGQ9Ik03IDExVjdhNSA1IDAgMCAxIDEwIDB2NCIvPjwvc3ZnPg==" width="20" alt="Lock"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container section-pad" style="margin-bottom: 80px;">
+        <div class="section-head fade-in">
+            <div class="line"></div>
+            <h2>ENCRYPTED COMMS</h2>
+            <div class="line"></div>
+        </div>
+
+      <form id="comms-form" class="fade-in">
+    <div class="form-grid">
+        <input name="codename" type="text" placeholder="CODENAME (NAME)" required>
+        <input name="phone" type="tel" placeholder="PHONE NUMBER" required>
+        <input name="email" id="emAil" type="email" placeholder="FREQUENCY (EMAIL)" required>
+    </div>
+    <select name="objective" required>
+        <option value="" disabled selected>SELECT OBJECTIVE</option>
+        <option value="web">WEB DEVELOPMENT QUOTE</option>
+        <option value="game">GAME DEV INQUIRY</option>
+    </select>
+    <textarea name="message" rows="5" placeholder="MESSAGE DATA..." required></textarea>
+    <button type="submit" class="tac-btn primary full">TRANSMIT DATA</button>
+</form>
+    </section>
+
+    <div class="mobile-dock">
+        <a href="#hero" class="dock-item active">
+            <span class="icon">⌂</span>
+            <span class="label">HQ</span>
+        </a>
+        <a href="#profile" class="dock-item">
+            <span class="icon">★</span>
+            <span class="label">CMD</span>
+        </a>
+        <a href="#projects" class="dock-item">
+            <span class="icon">⌬</span>
+            <span class="label">OPS</span>
+        </a>
+        <a href="#contact" class="dock-item">
+            <span class="icon">✉</span>
+            <span class="label">COMMS</span>
+        </a>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
