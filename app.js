@@ -1,4 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
+    /* --- MANUAL NOTIFICATION CONFIGURATION --- */
+    const notifyConfig = {
+        active: true,                 
+        title: "INTEL UPDATE",         
+        message: "NEW PROJECT LOGGED", 
+        linkText: "VIEW LOGS",         
+        linkTarget: "#projects",       
+        duration: 6000                 
+    };
+
+    /* --- NOTIFICATION --- */
+    if (notifyConfig.active) {
+        const container = document.getElementById('mw-notify-container');
+        const titleEl = document.getElementById('notify-title');
+        const msgEl = document.getElementById('notify-msg');
+        const btnEl = document.getElementById('notify-btn');
+        const barEl = document.getElementById('notify-bar');
+
+        // Apply Text
+        titleEl.textContent = notifyConfig.title;
+        msgEl.textContent = notifyConfig.message;
+        btnEl.textContent = notifyConfig.linkText;
+        btnEl.setAttribute('href', notifyConfig.linkTarget);
+        barEl.style.animationDuration = `${notifyConfig.duration}ms`;
+
+        // Trigger Animation 
+        setTimeout(() => {
+            container.classList.add('active');
+            barEl.classList.add('animate-bar');
+
+            const audioSources = ['audio/notification1.mp3', 'audio/notification2.mp3'];
+            const randomSound = audioSources[Math.floor(Math.random() * audioSources.length)];
+            
+            const audio = new Audio(randomSound);
+            audio.volume = 0.5; 
+            audio.play().catch(err => console.log("Autoplay blocked by browser:", err));
+            
+
+            // Auto Close
+            setTimeout(() => {
+                container.classList.remove('active');
+            }, notifyConfig.duration);
+        }, 2500);
+    }
 
     const preloader = document.getElementById('preloader');
     const track = document.getElementById('track');
