@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* --- 1. PRELOADER & INITIALIZATION --- */
     const preloader = document.getElementById('preloader');
-        /* --- VERTICAL CAROUSEL LOGIC --- */
     const track = document.getElementById('track');
     const upBtn = document.getElementById('up-btn');
     const downBtn = document.getElementById('down-btn');
@@ -167,3 +165,4 @@ form.addEventListener('submit', async (e) => {
 });
 
 });
+
