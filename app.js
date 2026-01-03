@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const notifyConfig = {
         active: true,                 
         title: "INTEL UPDATE",         
-        message: "NEW PROJECT LOGGED", 
+        message: "SHAGIL'S PORTFOLIO IS NOW LIVE", 
         linkText: "VIEW LOGS",         
         linkTarget: "#projects",       
         duration: 6000                 
@@ -209,4 +209,5 @@ form.addEventListener('submit', async (e) => {
 });
 
 });
+
 
